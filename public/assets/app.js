@@ -22,4 +22,18 @@ $(document).ready(function () {
             console.log("Inserted into table");
         })
     }
+
+    // On click function for view button
+    $("#view-btn").on("click", function(event){
+        event.preventDefault();
+        console.log("Inside view button");
+
+        // GET values
+        $.ajax("/api/view", {
+            type: "GET"
+        }).then(function(result){
+            console.log("All values");
+            console.log(result);
+        })
+    })
 })
